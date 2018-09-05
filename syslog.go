@@ -1,6 +1,6 @@
 // +build !windows,!nacl,!plan9
 
-package syslog
+package sysloghook
 
 import (
 	"log"
@@ -51,9 +51,6 @@ func (hook *SyslogHook) SetFormatter(formatter logrus.Formatter) {
 }
 
 func (hook *SyslogHook) Fire(entry *logrus.Entry) error {
-
-	hook.formatter.Format(entry)
-
 	// use our formatter instead of entry.String()
 	msg, err := hook.formatter.Format(entry)
 	if err != nil {
