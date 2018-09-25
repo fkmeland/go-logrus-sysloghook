@@ -13,8 +13,8 @@ import (
 func main() {
   log       := logrus.New()
   hook, err := sysloghook.NewSyslogHook("udp", "localhost:514", syslog.LOG_INFO, "",  &logrus.TextFormatter {
-			DisableTimestamp: true,
-		})
+ 	DisableTimestamp: true,
+  })
 
   if err == nil {
     log.Hooks.Add(hook)
@@ -34,8 +34,8 @@ import (
 func main() {
   log       := logrus.New()
   hook, err := sysloghook.NewSyslogHook("", "", syslog.LOG_INFO, "", &logrus.TextFormatter {
-			DisableTimestamp: true,
-		})
+ 	DisableTimestamp: true,
+  })
 
   if err == nil {
     log.Hooks.Add(hook)
